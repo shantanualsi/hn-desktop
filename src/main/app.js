@@ -7,7 +7,7 @@ import ReactDOM from 'react-dom'
 
 import Main from './Main'
 import store from './store'
-require('!!style-loader!css-loader!stylus-loader?sourceMap!../styles/global.styl')
+require('!!style-loader!css-loader!stylus-loader?sourceMap!../styles/dark.styl')
 
 const parentElement = document.getElementById('news-aggregator')
 const hist = syncHistoryWithStore(createBrowserHistory(), store)
