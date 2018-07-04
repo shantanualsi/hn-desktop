@@ -1,18 +1,22 @@
 import styles from './Aggregator.styl'
 import CSSModules from 'react-css-modules'
+
+var HNService = require('../../services/HackernewsService')
+
 class Aggregator extends React.Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            feeds: new Map()
+            feeds: []
         }
     }
 
     componentDidMount() {
-        fetch("https://hacker-news.firebaseio.com/v0/topstories.json")
-        .then(res => res.json)
+        HNService.fetchTopStories()
         .then((result) => {
+            let stories = HNService.fetchStoryDetails(result)
+            console.log(stories)
             this.setState({
                 isLoaded: true,
                 feeds: result
@@ -27,7 +31,7 @@ class Aggregator extends React.Component {
 
 
     render() {
-        return <div> Hello from Component </div>
+        return <div> {this.state.feeds} </div>
     }
 }
 
