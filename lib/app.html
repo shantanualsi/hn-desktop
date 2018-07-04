@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+
+        <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css" media="screen" charset="utf-8">
+        
+        <title>HackerNews Desktop 1.0</title>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div id="news-aggregator"></div>
+        <script>
+            window._ = require('lodash')
+          </script>
+        <script src="../node_modules/react/umd/react.development.js"></script>
+        <script src="../node_modules/redux/dist/redux.min.js"></script>
+        <script src="../node_modules/react-redux/dist/react-redux.min.js"></script>
+        <script type = "text/javascript">
+            const electron = require('electron')
+            var scriptUrl = window._.find(electron.remote.process.argv, (a) => a === '--hot')
+                ? 'http://localhost:8081/assets/app.js'
+                : '../compiled/app.js'
+            var scriptEl = document.createElement('script')
+            scriptEl.setAttribute('type', 'text/javascript')
+            scriptEl.setAttribute('src', scriptUrl)
+            document.body.appendChild(scriptEl)
+        </script>
+
+    </body>
+</html>

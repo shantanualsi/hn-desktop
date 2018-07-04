@@ -1,0 +1,11 @@
+.DS_Store
+.env
+Desktop.ini
+Thumbs.db
+node_modules/*
+/dist
+/compiled
+/secret
+*.log
+.idea
+.vscode
