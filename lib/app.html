@@ -25,7 +25,7 @@
         <script type = "text/javascript">
             const electron = require('electron')
             var scriptUrl = window._.find(electron.remote.process.argv, (a) => a === '--hot')
-                ? 'http://localhost:8081/assets/app.js'
+                ? 'http://localhost:8080/assets/app.js'
                 : '../compiled/app.js'
             var scriptEl = document.createElement('script')
             scriptEl.setAttribute('type', 'text/javascript')

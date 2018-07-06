@@ -1,3 +1,3 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow } = require("electron");
 
-require('./lib/app-main')
+require('./lib/app-main');
