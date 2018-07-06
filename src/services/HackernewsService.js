@@ -20,7 +20,10 @@ function fetchStory() {
 }
 
 function fetchStoryDetails(ids) {
-  return ids.forEach(id => storyRef(id))
+  ids = ids.slice(0, 10)
+  var promises = []
+  ids.forEach(id => promises.push(storyRef(id)))
+  return promises
 }
 
 function fetchTopStories() {
